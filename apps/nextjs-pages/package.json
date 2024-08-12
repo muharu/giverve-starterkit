@@ -1,0 +1,48 @@
+{
+  "name": "nextjs-pages",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@giverve/api": "workspace:*",
+    "@giverve/db": "workspace:*",
+    "@giverve/ui": "workspace:*",
+    "@giverve/validators": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.10.1",
+    "@tanstack/react-query": "catalog:",
+    "@trpc/client": "catalog:",
+    "@trpc/next": "catalog:",
+    "@trpc/react-query": "catalog:",
+    "@trpc/server": "catalog:",
+    "next": "^14.2.4",
+    "react": "catalog:react18",
+    "react-dom": "catalog:react18",
+    "superjson": "2.2.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@giverve/eslint-config": "workspace:*",
+    "@giverve/prettier-config": "workspace:*",
+    "@giverve/tailwind-config": "workspace:*",
+    "@giverve/tsconfig": "workspace:*",
+    "@types/node": "^20.14.9",
+    "@types/react": "catalog:react18",
+    "@types/react-dom": "catalog:react18",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "catalog:",
+    "jiti": "^1.21.6",
+    "prettier": "catalog:",
+    "tailwindcss": "^3.4.4",
+    "typescript": "catalog:"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.36.2"
+  },
+  "packageManager": "pnpm@9.7.0"
+}
