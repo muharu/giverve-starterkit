@@ -1,7 +1,8 @@
-import { env } from "@/env";
 import { createNextApiHandler } from "@trpc/server/adapters/next";
 
 import { appRouter, createTRPCContext } from "@giverve/api";
+
+import { env } from "~/env";
 
 // export API handler
 export default createNextApiHandler({

@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-properties */
+
 /**
  * This is the client-side entrypoint for your tRPC API. It is used to create the `api` object which
  * contains the Next.js App-wrapper, as well as your type-safe React Query hooks.

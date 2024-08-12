@@ -39,14 +39,11 @@
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "dotenv-cli": "^7.4.2",
-    "eslint": "^8.57.0",
+    "eslint": "catalog:",
     "jiti": "^1.21.6",
     "prettier": "catalog:",
     "tailwindcss": "^3.4.4",
     "typescript": "catalog:"
-  },
-  "ct3aMetadata": {
-    "initVersion": "7.36.2"
   },
   "packageManager": "pnpm@9.7.0"
 }

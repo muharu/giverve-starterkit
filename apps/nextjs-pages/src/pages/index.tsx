@@ -1,8 +1,9 @@
 import Head from "next/head";
-import { api } from "@/utils/api";
+
+import { api } from "~/utils/api";
 
 export default function Home() {
-  const { data, refetch } = api.post.hello.useQuery({ text: "from tRPC" });
+  const { data } = api.post.hello.useQuery({ text: "from tRPC" });
 
   return (
     <>
