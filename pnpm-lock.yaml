@@ -6,6 +6,12 @@ settings:
 
 catalogs:
   default:
+    '@hono/node-server':
+      specifier: ^1.12.0
+      version: 1.12.0
+    '@hono/trpc-server':
+      specifier: ^0.3.2
+      version: 0.3.2
     '@tanstack/react-query':
       specifier: ^5.51.9
       version: 5.51.23
@@ -21,12 +27,42 @@ catalogs:
     '@trpc/server':
       specifier: ^11.0.0-rc.466
       version: 11.0.0-rc.477
+    dotenv-cli:
+      specifier: ^7.4.2
+      version: 7.4.2
+    esbuild:
+      specifier: ^0.23.0
+      version: 0.23.0
     eslint:
       specifier: ^9.7.0
       version: 9.9.0
+    hono:
+      specifier: ^4.5.5
+      version: 4.5.5
+    jiti:
+      specifier: ^1.21.6
+      version: 1.21.6
+    next:
+      specifier: 14.2.5
+      version: 14.2.5
+    postcss:
+      specifier: ^8.4.39
+      version: 8.4.41
     prettier:
       specifier: ^3.3.3
       version: 3.3.3
+    rimraf:
+      specifier: ^6.0.1
+      version: 6.0.1
+    superjson:
+      specifier: 2.2.1
+      version: 2.2.1
+    tailwindcss:
+      specifier: ^3.4.9
+      version: 3.4.9
+    tsx:
+      specifier: ^4.17.0
+      version: 4.17.0
     typescript:
       specifier: ^5.5.3
       version: 5.5.4
@@ -56,7 +92,7 @@ importers:
         version: link:tooling/prettier
       '@turbo/gen':
         specifier: ^2.0.8
-        version: 2.0.12(@types/node@20.14.15)(typescript@5.5.4)
+        version: 2.0.12(@types/node@22.2.0)(typescript@5.5.4)
       prettier:
         specifier: 'catalog:'
         version: 3.3.3
@@ -76,13 +112,13 @@ importers:
         specifier: workspace:*
         version: link:../../packages/db
       '@hono/node-server':
-        specifier: ^1.12.0
+        specifier: 'catalog:'
         version: 1.12.0
       '@hono/trpc-server':
-        specifier: ^0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@trpc/server@11.0.0-rc.477)(hono@4.5.5)
       hono:
-        specifier: ^4.5.5
+        specifier: 'catalog:'
         version: 4.5.5
     devDependencies:
       '@giverve/eslint-config':
@@ -97,9 +133,15 @@ importers:
       '@types/bun':
         specifier: latest
         version: 1.1.6
+      '@types/node':
+        specifier: latest
+        version: 22.2.0
       dotenv-cli:
-        specifier: ^7.4.2
+        specifier: 'catalog:'
         version: 7.4.2
+      esbuild:
+        specifier: 'catalog:'
+        version: 0.23.0
       eslint:
         specifier: 'catalog:'
         version: 9.9.0(jiti@1.21.6)
@@ -107,10 +149,10 @@ importers:
         specifier: 'catalog:'
         version: 3.3.3
       rimraf:
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1
       tsx:
-        specifier: ^4.17.0
+        specifier: 'catalog:'
         version: 4.17.0
       typescript:
         specifier: 'catalog:'
@@ -149,7 +191,7 @@ importers:
         specifier: 'catalog:'
         version: 11.0.0-rc.477
       next:
-        specifier: ^14.2.4
+        specifier: 'catalog:'
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: catalog:react18
@@ -158,7 +200,7 @@ importers:
         specifier: catalog:react18
         version: 18.3.1(react@18.3.1)
       superjson:
-        specifier: 2.2.1
+        specifier: 'catalog:'
         version: 2.2.1
       zod:
         specifier: 'catalog:'
@@ -177,8 +219,8 @@ importers:
         specifier: workspace:*
         version: link:../../tooling/typescript
       '@types/node':
-        specifier: ^20.14.9
-        version: 20.14.15
+        specifier: latest
+        version: 22.2.0
       '@types/react':
         specifier: catalog:react18
         version: 18.3.3
@@ -186,20 +228,20 @@ importers:
         specifier: catalog:react18
         version: 18.3.0
       dotenv-cli:
-        specifier: ^7.4.2
+        specifier: 'catalog:'
         version: 7.4.2
       eslint:
         specifier: 'catalog:'
         version: 9.9.0(jiti@1.21.6)
       jiti:
-        specifier: ^1.21.6
+        specifier: 'catalog:'
         version: 1.21.6
       prettier:
         specifier: 'catalog:'
         version: 3.3.3
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))
+        specifier: 'catalog:'
+        version: 3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))
       typescript:
         specifier: 'catalog:'
         version: 5.5.4
@@ -216,7 +258,7 @@ importers:
         specifier: 'catalog:'
         version: 11.0.0-rc.477
       superjson:
-        specifier: 2.2.1
+        specifier: 'catalog:'
         version: 2.2.1
       zod:
         specifier: 'catalog:'
@@ -269,7 +311,7 @@ importers:
         specifier: workspace:*
         version: link:../../tooling/typescript
       dotenv-cli:
-        specifier: ^7.4.2
+        specifier: 'catalog:'
         version: 7.4.2
       drizzle-kit:
         specifier: ^0.22.8
@@ -318,7 +360,7 @@ importers:
         version: 2.5.2
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4)))
+        version: 1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4)))
     devDependencies:
       '@giverve/eslint-config':
         specifier: workspace:*
@@ -345,8 +387,8 @@ importers:
         specifier: catalog:react18
         version: 18.3.1
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))
+        specifier: 'catalog:'
+        version: 3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))
       typescript:
         specifier: 'catalog:'
         version: 5.5.4
@@ -446,14 +488,14 @@ importers:
   tooling/tailwind:
     dependencies:
       postcss:
-        specifier: ^8.4.39
+        specifier: 'catalog:'
         version: 8.4.41
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))
+        specifier: 'catalog:'
+        version: 3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4)))
+        version: 1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4)))
     devDependencies:
       '@giverve/eslint-config':
         specifier: workspace:*
@@ -1545,8 +1587,8 @@ packages:
   '@types/node@20.12.14':
     resolution: {integrity: sha512-scnD59RpYD91xngrQQLGkE+6UrHUPzeKZWhhjBSa3HSkwjbQc38+q3RoIVEwxQGRw3M+j5hpNAM+lgV3cVormg==}
 
-  '@types/node@20.14.15':
-    resolution: {integrity: sha512-Fz1xDMCF/B00/tYSVMlmK7hVeLh7jE5f3B7X1/hmV0MJBwE27KlS7EvD/Yp+z1lm8mVhwV5w+n8jOZG8AfTlKw==}
+  '@types/node@22.2.0':
+    resolution: {integrity: sha512-bm6EG6/pCpkxDf/0gDNDdtDILMOHgaQBVOJGdwsqClnxA3xL6jtMv76rLBc006RVMWbmaf0xbmom4Z/5o2nRkQ==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -3732,6 +3774,9 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
+  undici-types@6.13.0:
+    resolution: {integrity: sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==}
+
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
@@ -4660,7 +4705,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.0.12(@types/node@20.14.15)(typescript@5.5.4)':
+  '@turbo/gen@2.0.12(@types/node@22.2.0)(typescript@5.5.4)':
     dependencies:
       '@turbo/workspaces': 2.0.12
       commander: 10.0.1
@@ -4670,7 +4715,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.4.0
-      ts-node: 10.9.2(@types/node@20.14.15)(typescript@5.5.4)
+      ts-node: 10.9.2(@types/node@22.2.0)(typescript@5.5.4)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -4702,7 +4747,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.15
+      '@types/node': 22.2.0
 
   '@types/inquirer@6.5.0':
     dependencies:
@@ -4717,9 +4762,9 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@20.14.15':
+  '@types/node@22.2.0':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.13.0
 
   '@types/prop-types@15.7.12': {}
 
@@ -4734,13 +4779,13 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 20.14.15
+      '@types/node': 22.2.0
 
   '@types/tinycolor2@1.4.6': {}
 
   '@types/ws@8.5.12':
     dependencies:
-      '@types/node': 20.14.15
+      '@types/node': 22.2.0
 
   '@typescript-eslint/eslint-plugin@8.1.0(@typescript-eslint/parser@8.1.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)':
     dependencies:
@@ -6555,13 +6600,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.4.41
 
-  postcss-load-config@4.0.2(postcss@8.4.41)(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4)):
+  postcss-load-config@4.0.2(postcss@8.4.41)(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
       postcss: 8.4.41
-      ts-node: 10.9.2(@types/node@20.14.15)(typescript@5.5.4)
+      ts-node: 10.9.2(@types/node@22.2.0)(typescript@5.5.4)
 
   postcss-nested@6.2.0(postcss@8.4.41):
     dependencies:
@@ -6981,11 +7026,11 @@ snapshots:
 
   tailwind-merge@2.5.2: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))):
     dependencies:
-      tailwindcss: 3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))
+      tailwindcss: 3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))
 
-  tailwindcss@3.4.9(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4)):
+  tailwindcss@3.4.9(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -7004,7 +7049,7 @@ snapshots:
       postcss: 8.4.41
       postcss-import: 15.1.0(postcss@8.4.41)
       postcss-js: 4.0.1(postcss@8.4.41)
-      postcss-load-config: 4.0.2(postcss@8.4.41)(ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4))
+      postcss-load-config: 4.0.2(postcss@8.4.41)(ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4))
       postcss-nested: 6.2.0(postcss@8.4.41)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
@@ -7052,14 +7097,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@20.14.15)(typescript@5.5.4):
+  ts-node@10.9.2(@types/node@22.2.0)(typescript@5.5.4):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.15
+      '@types/node': 22.2.0
       acorn: 8.12.1
       acorn-walk: 8.3.3
       arg: 4.1.3
@@ -7177,6 +7222,8 @@ snapshots:
       which-boxed-primitive: 1.0.2
 
   undici-types@5.26.5: {}
+
+  undici-types@6.13.0: {}
 
   universalify@2.0.1: {}
 
