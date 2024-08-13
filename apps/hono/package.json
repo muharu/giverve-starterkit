@@ -1,0 +1,41 @@
+{
+  "name": "hono",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm node:dev",
+    "build": "rimraf ./dist && pnpm node:build && pnpm bun:build",
+    "start": "pnpm node:start",
+    "bun:dev": "bun run --hot ./src/bun.ts",
+    "bun:build": "bun build ./src/bun.ts --outdir ./dist",
+    "bun:start": "bun run src/bun.ts",
+    "node:dev": "pnpm with-env tsx -r dotenv/config src/node.ts",
+    "node:build": "esbuild --bundle --platform=node --outdir=dist src/node.ts",
+    "node:start": "pnpm with-env node ./dist/node.js",
+    "clean": "git clean -xdf .cache .next .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@giverve/api": "workspace:*",
+    "@giverve/db": "workspace:*",
+    "@hono/node-server": "^1.12.0",
+    "@hono/trpc-server": "^0.3.2",
+    "hono": "^4.5.5"
+  },
+  "devDependencies": {
+    "@giverve/eslint-config": "workspace:*",
+    "@giverve/prettier-config": "workspace:*",
+    "@giverve/tsconfig": "workspace:*",
+    "@types/bun": "latest",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.17.0",
+    "typescript": "catalog:"
+  },
+  "prettier": "@giverve/prettier-config"
+}
