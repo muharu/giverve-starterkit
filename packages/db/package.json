@@ -17,7 +17,22 @@
       "default": "./dist/schema.js"
     }
   },
-  "license": "MIT",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "typesVersions": {
+      "*": {
+        "*": [
+          "dist/*"
+        ]
+      }
+    }
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc",
