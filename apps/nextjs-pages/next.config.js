@@ -7,6 +7,7 @@ createJiti(fileURLToPath(import.meta.url))("./src/env");
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  output: "standalone",
 
   /**
    * If you are using `appDir` then you must comment the below `i18n` config out.

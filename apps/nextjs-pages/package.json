@@ -27,6 +27,7 @@
     "next": "catalog:",
     "react": "catalog:react18",
     "react-dom": "catalog:react18",
+    "sharp": "^0.33.4",
     "superjson": "catalog:",
     "zod": "catalog:"
   },
