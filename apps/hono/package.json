@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm node:dev",
-    "build": "rimraf ./dist && pnpm node:build && pnpm bun:build",
+    "build": "rimraf ./dist && pnpm node:build",
     "start": "pnpm node:start",
     "bun:dev": "bun run --hot ./src/bun.ts",
     "bun:build": "bun build ./src/bun.ts --outdir ./dist",

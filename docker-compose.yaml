@@ -1,6 +1,23 @@
 version: "3.8"
 
 services:
+  hono:
+    container_name: hono
+    environment:
+      POSTGRES_URL: ${POSTGRES_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+    build:
+      context: .
+      dockerfile: ./apps/hono/Dockerfile
+      args:
+        POSTGRES_URL: ${POSTGRES_URL}
+        AUTH_SECRET: ${AUTH_SECRET}
+    restart: always
+    ports:
+      - 8787:8787
+    networks:
+      - app_network
+
   nextjs-pages:
     container_name: nextjs-pages
     environment:
