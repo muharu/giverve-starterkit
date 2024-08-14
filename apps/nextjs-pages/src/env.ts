@@ -16,7 +16,7 @@ export const env = createEnv({
    * This way you can ensure the app isn't built with invalid env vars.
    */
   server: {
-    POSTGRES_URL: z.string().url(),
+    POSTGRES_URL: z.string(),
     // AUTH_SECRET:
     //   process.env.NODE_ENV === "production"
     //     ? z.string().min(1)

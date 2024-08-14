@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  nextjs-pages:
+    container_name: nextjs-pages
+    environment:
+      POSTGRES_URL: ${POSTGRES_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+    build:
+      context: .
+      dockerfile: ./apps/nextjs-pages/Dockerfile
+      args:
+        POSTGRES_URL: ${POSTGRES_URL}
+        AUTH_SECRET: ${AUTH_SECRET}
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    driver: bridge
