@@ -35,6 +35,21 @@ services:
     networks:
       - app_network
 
+  bot:
+    container_name: bot
+    environment:
+      BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+    build:
+      context: .
+      dockerfile: ./apps/bot/Dockerfile
+      args:
+        BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+    restart: always
+    ports:
+      - 6969:6969
+    networks:
+      - app_network
+
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
