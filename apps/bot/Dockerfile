@@ -74,5 +74,5 @@ COPY --from=installer --chown=bot:nodejs /app/apps/bot/dist /app/apps/bot/dist
 
 # Run the application as the non-root user
 USER bot
-CMD ["node", "apps/bot/dist/index.js"]
+CMD ["node", "apps/bot/dist/cluster.js"]
 # -------------------------------------------------------------------------------------------------------------

@@ -108,6 +108,9 @@ importers:
       commandkit:
         specifier: ^0.1.10
         version: 0.1.10(discord.js@14.15.3)(postcss@8.4.41)(ts-node@10.9.2(@types/node@22.3.0)(typescript@5.5.4))(typescript@5.5.4)
+      discord-hybrid-sharding:
+        specifier: ^2.2.0
+        version: 2.2.0
       discord.js:
         specifier: ^14.15.3
         version: 14.15.3
@@ -128,7 +131,7 @@ importers:
         specifier: 'catalog:'
         version: 7.4.2
       esbuild:
-        specifier: ^0.23.0
+        specifier: 'catalog:'
         version: 0.23.0
       eslint:
         specifier: 'catalog:'
@@ -2291,6 +2294,9 @@ packages:
 
   discord-api-types@0.37.83:
     resolution: {integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==}
+
+  discord-hybrid-sharding@2.2.0:
+    resolution: {integrity: sha512-nI9iyqrrQvBR8HZjiNu8Tsb0HR9mqp0ZlSfiIxUaqiwaBzTtG2o4/yCZIMwnj3DnV4UZeuejuhPhr8vkz+uiwg==}
 
   discord.js@14.15.3:
     resolution: {integrity: sha512-/UJDQO10VuU6wQPglA4kz2bw2ngeeSbogiIPx/TsnctfzV/tNf+q+i1HlgtX1OGpeOBpJH9erZQNO5oRM2uAtQ==}
@@ -5879,6 +5885,8 @@ snapshots:
       path-type: 4.0.0
 
   discord-api-types@0.37.83: {}
+
+  discord-hybrid-sharding@2.2.0: {}
 
   discord.js@14.15.3:
     dependencies:

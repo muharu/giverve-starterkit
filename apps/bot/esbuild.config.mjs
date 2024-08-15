@@ -9,6 +9,7 @@ const build = async () => {
       bundle: true,
       platform: "node",
       outdir: "dist",
+      treeShaking: true,
     });
 
     console.log("Build completed successfully.");

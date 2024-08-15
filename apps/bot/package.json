@@ -2,9 +2,9 @@
   "name": "bot",
   "version": "0.1.0",
   "scripts": {
-    "dev": "pnpm with-env tsx src/index.ts",
+    "dev": "pnpm with-env tsx --watch src/index.ts",
     "build": "rimraf ./dist && pnpm with-env node esbuild.config.mjs",
-    "start": "pnpm with-env node dist/index.js",
+    "start": "pnpm with-env node dist/cluster.js",
     "clean": "git clean -xdf .cache .next .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "commandkit": "^0.1.10",
+    "discord-hybrid-sharding": "^2.2.0",
     "discord.js": "^14.15.3"
   },
   "devDependencies": {
