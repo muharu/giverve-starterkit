@@ -45,7 +45,10 @@ COPY --from=builder /app/out/full/ /app/
 
 # Setup environment variables (use build args to pass sensitive data securely)
 ARG BOT_DISCORD_TOKEN
-ENV BOT_DISCORD_TOKEN="$BOT_DISCORD_TOKEN"
+ENV BOT_DISCORD_TOKEN=$BOT_DISCORD_TOKEN
+
+ARG API_BASE_URL
+ENV API_BASE_URL=$API_BASE_URL
 
 # Uncomment to enable remote caching if required
 # ARG TURBO_TEAM

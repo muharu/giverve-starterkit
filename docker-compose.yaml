@@ -6,12 +6,14 @@ services:
     environment:
       POSTGRES_URL: ${POSTGRES_URL}
       AUTH_SECRET: ${AUTH_SECRET}
+      API_BASE_URL: ${API_BASE_URL}
     build:
       context: .
       dockerfile: ./apps/hono/Dockerfile
       args:
         POSTGRES_URL: ${POSTGRES_URL}
         AUTH_SECRET: ${AUTH_SECRET}
+        API_BASE_URL: ${API_BASE_URL}
     restart: always
     ports:
       - 8787:8787
@@ -23,12 +25,14 @@ services:
     environment:
       POSTGRES_URL: ${POSTGRES_URL}
       AUTH_SECRET: ${AUTH_SECRET}
+      API_BASE_URL: ${API_BASE_URL}
     build:
       context: .
       dockerfile: ./apps/nextjs-pages/Dockerfile
       args:
         POSTGRES_URL: ${POSTGRES_URL}
         AUTH_SECRET: ${AUTH_SECRET}
+        API_BASE_URL: ${API_BASE_URL}
     restart: always
     ports:
       - 3000:3000
@@ -39,11 +43,13 @@ services:
     container_name: bot
     environment:
       BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+      API_BASE_URL: ${API_BASE_URL}
     build:
       context: .
       dockerfile: ./apps/bot/Dockerfile
       args:
         BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+        API_BASE_URL: ${API_BASE_URL}
     restart: always
     ports:
       - 6969:6969
