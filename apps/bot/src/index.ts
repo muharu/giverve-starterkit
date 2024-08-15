@@ -19,4 +19,4 @@ new CommandKit({
   commandsPath: path.join(__dirname, "commands"),
 });
 
-client.login(process.env.BOT_DISCORD_TOKEN);
+void client.login(process.env.BOT_DISCORD_TOKEN);
