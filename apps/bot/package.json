@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "pnpm with-env tsx src/index.ts",
-    "build": "pnpm with-env node esbuild.config.mjs",
+    "build": "rimraf ./dist && pnpm with-env node esbuild.config.mjs",
     "start": "pnpm with-env node dist/index.js",
     "clean": "git clean -xdf .cache .next .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -27,5 +27,6 @@
     "rimraf": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
-  }
+  },
+  "prettier": "@giverve/prettier-config"
 }

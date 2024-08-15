@@ -9,7 +9,6 @@ const build = async () => {
       bundle: true,
       platform: "node",
       outdir: "dist",
-      external: ["discord.js"],
     });
 
     console.log("Build completed successfully.");
