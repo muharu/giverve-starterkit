@@ -1,8 +1,7 @@
 {
-  "name": "nextjs-pages",
+  "name": "nextjs-app",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .cache .next .turbo node_modules",
@@ -46,7 +45,5 @@
     "postcss": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@giverve/prettier-config",
-  "packageManager": "pnpm@9.7.0"
+  }
 }
