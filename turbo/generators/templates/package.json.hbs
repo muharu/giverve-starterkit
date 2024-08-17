@@ -6,7 +6,18 @@
   "exports": {
     ".": "./src/index.ts"
   },
-  "license": "MIT",
+  "typesVersions": {
+    "*": {
+      "*": ["src/*"]
+    }
+  },
+  "publishConfig": {
+    "typesVersions": {
+      "*": {
+        "*": ["dist/*"]
+      }
+    }
+  },
   "scripts": {
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",

@@ -17,7 +17,22 @@
       "default": "./dist/schema.js"
     }
   },
-  "license": "MIT",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "typesVersions": {
+      "*": {
+        "*": [
+          "dist/*"
+        ]
+      }
+    }
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc",
@@ -40,7 +55,7 @@
     "@giverve/eslint-config": "workspace:*",
     "@giverve/prettier-config": "workspace:*",
     "@giverve/tsconfig": "workspace:*",
-    "dotenv-cli": "^7.4.2",
+    "dotenv-cli": "catalog:",
     "drizzle-kit": "^0.22.8",
     "eslint": "catalog:",
     "prettier": "catalog:",

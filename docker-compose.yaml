@@ -1,0 +1,79 @@
+version: "3.8"
+
+services:
+  hono:
+    container_name: hono
+    environment:
+      POSTGRES_URL: ${POSTGRES_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+      API_BASE_URL: ${API_BASE_URL}
+    build:
+      context: .
+      dockerfile: ./apps/hono/Dockerfile
+      args:
+        POSTGRES_URL: ${POSTGRES_URL}
+        AUTH_SECRET: ${AUTH_SECRET}
+        API_BASE_URL: ${API_BASE_URL}
+    restart: always
+    ports:
+      - 8787:8787
+    networks:
+      - app_network
+
+  nextjs-pages:
+    container_name: nextjs-pages
+    environment:
+      POSTGRES_URL: ${POSTGRES_URL}
+      AUTH_SECRET: ${AUTH_SECRET}
+      API_BASE_URL: ${API_BASE_URL}
+    build:
+      context: .
+      dockerfile: ./apps/nextjs-pages/Dockerfile
+      args:
+        POSTGRES_URL: ${POSTGRES_URL}
+        AUTH_SECRET: ${AUTH_SECRET}
+        API_BASE_URL: ${API_BASE_URL}
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - app_network
+
+  bot-server-1:
+    container_name: bot-server-1
+    environment:
+      BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+      API_BASE_URL: ${API_BASE_URL}
+    build:
+      context: .
+      dockerfile: ./apps/bot/Dockerfile
+      args:
+        BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+        API_BASE_URL: ${API_BASE_URL}
+    restart: always
+    ports:
+      - 0001:0001
+    networks:
+      - app_network
+
+  bot-server-2:
+    container_name: bot-server-2
+    environment:
+      BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+      API_BASE_URL: ${API_BASE_URL}
+    build:
+      context: .
+      dockerfile: ./apps/bot/Dockerfile
+      args:
+        BOT_DISCORD_TOKEN: ${BOT_DISCORD_TOKEN}
+        API_BASE_URL: ${API_BASE_URL}
+    restart: always
+    ports:
+      - 0002:0002
+    networks:
+      - app_network
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    driver: bridge
