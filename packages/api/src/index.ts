@@ -1,6 +1,7 @@
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 
 import type { AppRouter } from "./root";
+import { createContext } from "./context";
 import { appRouter } from "./root";
 import { createCallerFactory, createTRPCContext } from "./trpc";
 
@@ -12,6 +13,11 @@ import { createCallerFactory, createTRPCContext } from "./trpc";
  *       ^? Post[]
  */
 const createCaller = createCallerFactory(appRouter);
+
+export const createAsyncCaller = async () => {
+  const context = await createContext();
+  return createCaller(context);
+};
 
 /**
  * Inference helpers for input types

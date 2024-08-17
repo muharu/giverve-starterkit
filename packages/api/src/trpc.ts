@@ -10,6 +10,8 @@ import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
+import { createContext } from "./context";
+
 /**
  * 1. CONTEXT
  *
@@ -22,8 +24,12 @@ import { ZodError } from "zod";
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = () => {
-  return {};
+export const createTRPCContext = async () => {
+  const { session } = await createContext();
+
+  return {
+    session,
+  };
 };
 
 /**
@@ -85,6 +91,18 @@ const timingMiddleware = t.middleware(async ({ next, path }) => {
   return result;
 });
 
+const authMiddleware = t.middleware(async ({ ctx, next }) => {
+  // if (!ctx.session) {
+  //   throw new TRPCError({ code: "UNAUTHORIZED" });
+  // }
+
+  return next({
+    ctx: {
+      session: ctx.session,
+    },
+  });
+});
+
 /**
  * Public (unauthed) procedure
  *
@@ -102,3 +120,4 @@ export const publicProcedure = t.procedure.use(timingMiddleware);
  *
  * @see https://trpc.io/docs/procedures
  */
+export const protectedProcedure = publicProcedure.use(authMiddleware);

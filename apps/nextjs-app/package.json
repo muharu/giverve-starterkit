@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-pages",
+  "name": "nextjs-app",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -46,7 +46,5 @@
     "postcss": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@giverve/prettier-config",
-  "packageManager": "pnpm@9.7.0"
+  }
 }
