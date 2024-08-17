@@ -1,13 +1,15 @@
+/* eslint-disable no-restricted-properties */
+
 "use client";
 
+import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink, loggerLink } from "@trpc/client";
 import { getFetch } from "@trpc/react-query";
-import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 import superjson from "superjson";
 
-import { AppRouter } from "@giverve/api";
+import type { AppRouter } from "@giverve/api";
 
 import { trpc } from "~/lib/trpc";
 
@@ -21,7 +23,9 @@ const getBaseUrl = () => {
   return process.env.API_BASE_URL; // Dev SSR should use API_BASE_URL
 };
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const [trpcClient] = useState(() =>
     trpc.createClient({
       /**
